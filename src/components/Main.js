@@ -10,14 +10,14 @@ class Main extends Component {
         <table className="table table-borderless text-muted text-center">
           <thead>
             <tr>
-              <th scope="col">Staking Balance</th>
-              <th scope="col">Reward Balance</th>
+              <th scope="col" className="style-text">Staking Balance</th>
+              <th scope="col" className="style-text">Reward Balance</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} mDAI</td>
-              <td>{window.web3.utils.fromWei(this.props.dappTokenBalance, 'Ether')} DAPP</td>
+              <td className="style-text">{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} mDAI</td>
+              <td className="style-text">{window.web3.utils.fromWei(this.props.dappTokenBalance, 'Ether')} KuberCoin</td>
             </tr>
           </tbody>
         </table>
