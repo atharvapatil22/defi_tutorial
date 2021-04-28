@@ -3,6 +3,23 @@ import dai from '../dai.png'
 
 class Main extends Component {
 
+  state = { balance: 10 };
+
+  increaseInterest = () => {
+    console.log(this.state)
+    const { balance } = this.state;
+    let temp = balance;
+    temp = temp + (temp * (0.1));
+    temp = Math.round(temp*100)/100;
+    console.log(temp)
+    this.setState({ balance: temp});
+    console.log("interest issued")
+  };
+
+  componentDidMount() {
+    setInterval(this.increaseInterest, 5000);
+  }
+
   render() {
     return (
       <div id="content" className="mt-3">
@@ -17,7 +34,7 @@ class Main extends Component {
           <tbody>
             <tr>
               <td className="style-text">{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} mDAI</td>
-              <td className="style-text">{window.web3.utils.fromWei(this.props.dappTokenBalance, 'Ether')} KuberCoin</td>
+              <td className="style-text">{this.state.balance} KuberCoin</td>
             </tr>
           </tbody>
         </table>

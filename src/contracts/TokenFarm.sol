@@ -68,7 +68,7 @@ contract TokenFarm {
             address recipient = stakers[i];
             uint256 balance = stakingBalance[recipient];
             if (balance > 0) {
-                dappToken.transfer(recipient, balance * (0.1));
+                dappToken.transfer(recipient, balance);
             }
         }
     }
